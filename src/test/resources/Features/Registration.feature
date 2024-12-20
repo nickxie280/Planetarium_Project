@@ -16,8 +16,8 @@ Feature: User Registration
 
   @UR1 @UR2 @UR3 @UR4 @UR5 @UR6
   Scenario Outline: Users can not register a new account with invalid credentials
-    When the user provides a "<username>"
-    When the user provides a "<password>"
+    When the user provides a username "<username>"
+    When the user provides a password "<password>"
     Then the user should get a browser alert saying "<alert>"
     And the user should be redirected to the register page
 
