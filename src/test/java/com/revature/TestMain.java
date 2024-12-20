@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.pom.Login;
 import com.revature.pom.Registration;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -19,6 +20,7 @@ public class TestMain {
 
     public static WebDriver driver = null;
     public static Registration registration;
+    public static Login login;
 
     /*
         BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
@@ -30,6 +32,7 @@ public class TestMain {
     public static void setup(){
         driver = new ChromeDriver();
         registration = new Registration(driver);
+        login = new Login(driver);
     }
 
     /*

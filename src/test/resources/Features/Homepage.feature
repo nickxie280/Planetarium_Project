@@ -1,5 +1,5 @@
 ##@US3 @SR2 @SR3
-##Feature: View User PLanets and Moons
+##Feature: View User Planets and Moons
 ##  As a user I want to see my planets and moons added to the Planetarium so I can track my findings
 
 ##  @PR4 @MR4

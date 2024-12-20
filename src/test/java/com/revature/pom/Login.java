@@ -10,12 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Registration {
+public class Login {
 
     private WebDriver driver;
-
-    @FindBy(xpath = "//a[@href='http://localhost:8080/register']")
-    private WebElement registrationLink;
 
     @FindBy(id = "usernameInput")
     private WebElement userInput;
@@ -24,19 +21,15 @@ public class Registration {
     private WebElement passInput;
 
     @FindBy(xpath = "//input[@type='submit']")
-    private WebElement createButton;
+    private WebElement loginButton;
 
-    public Registration(WebDriver driver){
+    public Login(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void goToLoginPageToRegister(){
+    public void goToLoginPageToLogin(){
         driver.get("http://localhost:8080/");
-    }
-
-    public void clickRegisterLink(){
-        registrationLink.click();
     }
 
     public void insertUsername(String user){
@@ -47,8 +40,8 @@ public class Registration {
         passInput.sendKeys(pass);
     }
 
-    public void accountCreation(){
-        createButton.click();
+    public void loginAttempt(){
+        loginButton.click();
     }
 
     public String alertHandler(){
