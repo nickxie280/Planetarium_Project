@@ -19,7 +19,7 @@ Feature: Login Feature
     And the user should be redirected to the login page to login
 
   Examples:
-    |username   | password  |alert                        |
-    |VU1	    |IU1	    |Invalid credentials          |
-    |IU1	    |VU1	    |Invalid credentials          |
-    |IU1	    |IU1	    |Invalid credentials          |
+    |username   | password              |alert                        |
+    |Batman	    |Iamtheintern1939	    |Invalid credentials          |
+    |Robin	    |Iamtheintern1939	    |Invalid credentials          |
+    |Robin	    |Iamthenight1939	    |Invalid credentials          |

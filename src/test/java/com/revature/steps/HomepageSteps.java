@@ -34,6 +34,8 @@ public class HomepageSteps {
         }else{
             TestMain.homepage.goToLoginPageForHomepage();
         }
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.titleIs("Planetarium Login"));
         Assert.assertEquals("Planetarium Login", TestMain.driver.getTitle());
     }
 

@@ -1,6 +1,7 @@
 package com.revature;
 
 import com.revature.pom.Homepage;
+import com.revature.pom.PlanetCreate;
 import com.revature.utility.Setup;
 import com.revature.pom.Login;
 import com.revature.pom.Registration;
@@ -26,6 +27,7 @@ public class TestMain {
     public static Registration registration;
     public static Login login;
     public static Homepage homepage;
+    public static PlanetCreate planetCreate;
 
     /*
         BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
@@ -40,6 +42,7 @@ public class TestMain {
         registration = new Registration(driver);
         login = new Login(driver);
         homepage = new Homepage(driver);
+        planetCreate = new PlanetCreate(driver);
     }
 
     /*
