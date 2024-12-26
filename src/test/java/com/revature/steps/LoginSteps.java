@@ -5,6 +5,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginSteps {
 
@@ -32,6 +36,8 @@ public class LoginSteps {
 
     @Then("the user should be redirected to the home page")
     public void the_user_should_be_redirected_to_the_register_page() {
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.titleIs("Home"));
         Assert.assertEquals("Home", TestMain.driver.getTitle());
     }
 

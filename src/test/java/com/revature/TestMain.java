@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.pom.Homepage;
 import com.revature.utility.Setup;
 import com.revature.pom.Login;
 import com.revature.pom.Registration;
@@ -10,6 +11,9 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -21,6 +25,7 @@ public class TestMain {
     public static WebDriver driver = null;
     public static Registration registration;
     public static Login login;
+    public static Homepage homepage;
 
     /*
         BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
@@ -34,6 +39,7 @@ public class TestMain {
         driver = new ChromeDriver();
         registration = new Registration(driver);
         login = new Login(driver);
+        homepage = new Homepage(driver);
     }
 
     /*

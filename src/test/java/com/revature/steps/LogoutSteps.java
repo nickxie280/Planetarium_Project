@@ -5,6 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LogoutSteps {
 
@@ -20,6 +25,8 @@ public class LogoutSteps {
             TestMain.login.insertUsername("Batman");
             TestMain.login.insertPassword("Iamthenight1939");
             TestMain.login.loginAttempt();
+            WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(2));
+            wait.until(ExpectedConditions.titleIs("Home"));
         }
     }
 
@@ -31,6 +38,8 @@ public class LogoutSteps {
 
     @Then("the user should be redirected to the login page after logout")
     public void the_user_should_be_redirected_to_the_login_page_to_login() {
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.titleIs("Planetarium Login"));
         Assert.assertEquals("Planetarium Login", TestMain.driver.getTitle());
     }
 }
