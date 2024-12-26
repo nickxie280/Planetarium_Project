@@ -23,6 +23,9 @@ public class Login {
     @FindBy(xpath = "//input[@type='submit']")
     private WebElement loginButton;
 
+    @FindBy(id = "logoutButton")
+    private WebElement logoutButton;
+
     public Login(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -44,8 +47,13 @@ public class Login {
         loginButton.click();
     }
 
+    //Logout incorporated into login handler
+    public void logoutAttempt() {
+        logoutButton.click();
+    }
+
     public String alertHandler(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
         String alertMessage = alert.getText();

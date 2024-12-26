@@ -11,7 +11,7 @@ Feature: Login Feature
     And the user submits the login credentials
     Then the user should be redirected to the home page
 
-  Scenario Outline: Users can not login to an account with invalid credentials
+  Scenario Outline: Users cannot login to an account with invalid credentials
     When the user provides an invalid login username "<username>"
     When the user provides an invalid login password "<password>"
     And the user submits the login credentials

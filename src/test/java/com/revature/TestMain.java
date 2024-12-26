@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.utility.Setup;
 import com.revature.pom.Login;
 import com.revature.pom.Registration;
 import io.cucumber.junit.Cucumber;
@@ -17,7 +18,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
         plugin = {"pretty", "html:src/test/resources/reports/html-report.html"}
 )
 public class TestMain {
-
     public static WebDriver driver = null;
     public static Registration registration;
     public static Login login;
@@ -30,6 +30,7 @@ public class TestMain {
 
     @BeforeClass
     public static void setup(){
+        Setup.resetTestDatabase();
         driver = new ChromeDriver();
         registration = new Registration(driver);
         login = new Login(driver);
