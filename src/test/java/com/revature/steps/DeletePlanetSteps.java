@@ -14,7 +14,7 @@ public class DeletePlanetSteps {
         TestMain.planetCreate.selectPlanet();
     }
 
-    @When("the user inputs a valid name")
+    @When("the user inputs a valid planet name")
     public void the_user_inputs_a_valid_name() {
         TestMain.deletePlanet.insertValidPlanetName();
     }
@@ -26,10 +26,10 @@ public class DeletePlanetSteps {
 
     @Then("the data reflected has been refreshed to include the removed planet and corresponding moons")
     public void the_data_reflected_has_been_refreshed_to_include_the_removed_planet_and_corresponding_moons() {
-        Assert.assertEquals(2, TestMain.planetCreate.getNumberOfCelestialRows(2));
+        Assert.assertEquals(2, TestMain.deletePlanet.getNumberOfCelestialRows());
     }
 
-    @When("the user inputs a invalid name {string}")
+    @When("the user inputs a invalid planet name {string}")
     public void the_user_inputs_a_invalid_name(String string) {
         TestMain.deletePlanet.insertInvalidPlanetName(string);
     }

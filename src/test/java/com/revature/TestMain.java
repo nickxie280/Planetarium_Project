@@ -28,6 +28,7 @@ public class TestMain {
     public static PlanetCreate planetCreate;
     public static MoonCreate moonCreate;
     public static DeletePlanet deletePlanet;
+    public static DeleteMoon deleteMoon;
 
     /*
         BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
@@ -44,6 +45,7 @@ public class TestMain {
         planetCreate = new PlanetCreate(driver);
         moonCreate = new MoonCreate(driver);
         deletePlanet = new DeletePlanet(driver);
+        deleteMoon = new DeleteMoon(driver);
     }
 
     /*
