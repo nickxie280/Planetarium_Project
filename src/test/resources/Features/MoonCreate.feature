@@ -6,7 +6,7 @@ Feature: Moon Creation
     And the user creates a moon
 
   ## Happy Path
-  Scenario Outline: While logged in, the user is able to create a planet with valid inputs
+  Scenario Outline: While logged in, the user is able to create a moon with valid inputs
     When the user inputs a moon name "<Moon Name>"
     When the user inputs a owning planet ID "<Planet ID>"
     When the user inputs a moon file type "<File Type>"
@@ -24,7 +24,7 @@ Feature: Moon Creation
       |Moon_Prime-First 17          |2         |PNG	                |
 
   ## Sad Path
-  Scenario Outline: While logged in, the user is not able to create a planet with invalid inputs
+  Scenario Outline: While logged in, the user is not able to create a moon with invalid inputs
     When the user inputs a moon name "<Moon Name>"
     When the user inputs a owning planet ID "<Planet ID>"
     When the user inputs a moon file type "<File Type>"

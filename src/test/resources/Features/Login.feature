@@ -4,13 +4,14 @@ Feature: Login Feature
   Background: Login Starting Actions
     Given the user is on the login page to login
 
+  ## Happy Path
   Scenario: Users can login to an account with valid credentials
-    #TODO Insert valid username/password in step implementation
     When the user provides a valid login username
     And the user provides a valid login password
     And the user submits the login credentials
     Then the user should be redirected to the home page
 
+  ## Sad Path
   Scenario Outline: Users cannot login to an account with invalid credentials
     When the user provides an invalid login username "<username>"
     When the user provides an invalid login password "<password>"

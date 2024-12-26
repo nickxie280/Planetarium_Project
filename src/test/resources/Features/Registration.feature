@@ -1,4 +1,3 @@
-@US1 @SR1
 Feature: User Registration
   As a new user I want to open an account with the Planetarium so I can save my celestial findings
 
@@ -6,15 +5,15 @@ Feature: User Registration
     Given the user is on the login page to register
     And the user clicks the register link
 
+  ## Happy Path
   Scenario: Users can register a new account with valid credentials
-    #TODO Insert valid username/password in step implementation
     When the user provides a valid registration username
     And the user provides a valid registration password
     And the user submits the registration credentials
     Then the user should get a registration browser alert saying "Account created successfully"
     And the user should be redirected to the login page after registration
 
-  @UR1 @UR2 @UR3 @UR4 @UR5 @UR6
+  ## Sad Path
   Scenario Outline: Users cannot register a new account with invalid credentials
     When the user provides an invalid registration username "<username>"
     When the user provides an invalid registration password "<password>"
