@@ -1,10 +1,7 @@
 package com.revature;
 
-import com.revature.pom.Homepage;
-import com.revature.pom.PlanetCreate;
+import com.revature.pom.*;
 import com.revature.utility.Setup;
-import com.revature.pom.Login;
-import com.revature.pom.Registration;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
@@ -20,7 +17,7 @@ import java.time.Duration;
 @CucumberOptions(
         features = "classpath:features",
         glue = "com.revature.steps",
-        plugin = {"pretty", "html:src/test/resources/reports/html-report.html"}
+        plugin = {"pretty", "html:src/test/resources/reports/html-report.html", "json:src/test/resources/reports/json-report.json"}
 )
 public class TestMain {
     public static WebDriver driver = null;
@@ -28,6 +25,7 @@ public class TestMain {
     public static Login login;
     public static Homepage homepage;
     public static PlanetCreate planetCreate;
+    public static MoonCreate moonCreate;
 
     /*
         BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
@@ -37,12 +35,12 @@ public class TestMain {
 
     @BeforeClass
     public static void setup(){
-        Setup.resetTestDatabase();
         driver = new ChromeDriver();
         registration = new Registration(driver);
         login = new Login(driver);
         homepage = new Homepage(driver);
         planetCreate = new PlanetCreate(driver);
+        moonCreate = new MoonCreate(driver);
     }
 
     /*

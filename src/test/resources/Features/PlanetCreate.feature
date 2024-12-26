@@ -31,5 +31,5 @@ Feature: Planet Creation
       |Planet Name                                                      | File Type             |alert                        |
       |Planet_Name_That_Is_Way_Too_Long_And_Breaks_Rules-123456789	    |NONE	                |Invalid planet name          |
       |Invalid_Name!!!!!!!!                                     	    |NONE	                |Invalid planet name          |
-      |Earth_Prime-First 12                                             |NONE	                |Invalid planet name          |
+      |Earth                                                            |NONE	                |Invalid planet name          |
       |Earth_Prime-First 122                                            |GIF	                |Invalid file type            |

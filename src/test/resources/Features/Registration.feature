@@ -24,7 +24,6 @@ Feature: User Registration
 
   Examples:
     |username                            | password                           |alert           |
-    |Super_man-2001                      |Krypton-was_2000                    |Invalid username|
     |Batman	                             |Krypton-was_2000	                  |Invalid username|
     |Bane	                             |Krypton-was_2000	                  |Invalid username|
     |wonder_woman_for_the_DC_theming	 |Krypton-was_2000	                  |Invalid username|

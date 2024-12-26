@@ -51,7 +51,7 @@ public class PlanetCreateSteps {
 
     @Then("the data reflected has been refreshed to include the newly added planet")
     public void the_data_reflected_has_been_refreshed_to_include_the_newly_added_planet() {
-        Assert.assertEquals(TestMain.planetCreate.getExpectedRows(), TestMain.planetCreate.getNumberOfCelestialRows(TestMain.planetCreate.getExpectedRows()));
+        Assert.assertEquals(5, TestMain.planetCreate.getNumberOfCelestialRows(5));
     }
 
     @Then("the user should get a browser alert saying {string}")

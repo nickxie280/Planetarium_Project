@@ -27,8 +27,6 @@ public class PlanetCreate {
     @FindBy(xpath = "//button[@class='submit-button']")
     private WebElement submitButton;
 
-    private int expectedRows = 4;
-
     public PlanetCreate(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -57,11 +55,6 @@ public class PlanetCreate {
 
     public void submitPlanet(){
         submitButton.click();
-        expectedRows++;
-    }
-
-    public int getExpectedRows(){
-        return expectedRows;
     }
 
     public int getNumberOfCelestialRows(int expectedRows){
