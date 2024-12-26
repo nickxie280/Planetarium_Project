@@ -31,10 +31,6 @@ public class DeleteMoon {
         deleteInput.sendKeys("Luna");
     }
 
-    public void pressDelete(){
-        deleteButton.click();
-    }
-
     public int getNumberOfCelestialRows(){
         WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.tagName("tr"),4));
