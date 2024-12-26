@@ -1,7 +1,7 @@
 Feature: Moon Creation
   As a user I want to add new moons to the Planetarium so I can update my findings
 
-  Background:
+  Background: Moon Creation Starting Actions
     Given that the user is logged in and is on the home page
     And the user creates a moon
 

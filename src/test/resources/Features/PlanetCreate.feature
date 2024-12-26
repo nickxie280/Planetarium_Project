@@ -1,7 +1,7 @@
 Feature: Planet Creation
   As a user I want to add new planets to the Planetarium so I can update my findings
 
-  Background:
+  Background: Planet Creation Starting Actions
     Given that the user is logged in and is on the home page
     And the user creates a planet
 

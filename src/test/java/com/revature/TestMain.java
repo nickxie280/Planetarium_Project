@@ -2,6 +2,7 @@ package com.revature;
 
 import com.revature.pom.*;
 import com.revature.utility.Setup;
+import io.cucumber.java.hu.De;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
@@ -26,6 +27,7 @@ public class TestMain {
     public static Homepage homepage;
     public static PlanetCreate planetCreate;
     public static MoonCreate moonCreate;
+    public static DeletePlanet deletePlanet;
 
     /*
         BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
@@ -41,6 +43,7 @@ public class TestMain {
         homepage = new Homepage(driver);
         planetCreate = new PlanetCreate(driver);
         moonCreate = new MoonCreate(driver);
+        deletePlanet = new DeletePlanet(driver);
     }
 
     /*
