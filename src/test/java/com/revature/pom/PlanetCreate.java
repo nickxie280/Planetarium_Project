@@ -58,14 +58,14 @@ public class PlanetCreate {
     }
 
     public int getNumberOfCelestialRows(int expectedRows){
-        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.tagName("tr"),expectedRows+1));
         List<WebElement> tableRows = driver.findElements(By.tagName("tr"));
         return tableRows.size()-1;
     }
 
     public String alertHandler(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
         String alertMessage = alert.getText();

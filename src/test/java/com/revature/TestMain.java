@@ -25,12 +25,6 @@ public class TestMain {
     public static DeletePlanet deletePlanet;
     public static DeleteMoon deleteMoon;
 
-    /*
-        BeforeClass, provided by Junit, tells Junit to execute the associated method before any other
-        tests. This is a useful tool for doing any setup that is needed across multiple tests, and is
-        going to be more commonly used for System Testing than Integration or Unit Testing
-     */
-
     @BeforeClass
     public static void setup(){
         driver = new ChromeDriver();
@@ -42,12 +36,6 @@ public class TestMain {
         deletePlanet = new DeletePlanet(driver);
         deleteMoon = new DeleteMoon(driver);
     }
-
-    /*
-        AfterClass, provided by Junit, tells Junit to execute the associated method after all the testing is
-        done. This is a useful tool for destroying any resources that need to be closed or generated
-        reports not covered by your testing tools.
-     */
 
     @AfterClass
     public static void tearDown(){

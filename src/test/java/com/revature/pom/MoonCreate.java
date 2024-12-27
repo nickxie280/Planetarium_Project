@@ -65,7 +65,7 @@ public class MoonCreate {
     }
 
     public int getNumberOfCelestialRows(int expectedRows){
-        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.tagName("tr"),expectedRows+1));
         List<WebElement> tableRows = driver.findElements(By.tagName("tr"));
         return tableRows.size()-1;

@@ -17,7 +17,7 @@ public class PlanetCreateSteps {
     public void that_the_user_is_logged_in_and_is_on_the_home_page() {
         TestMain.homepage.goToLoginPageForHomepage();
         TestMain.homepage.knownGoodLogin();
-        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.titleIs("Home"));
         Assert.assertEquals("Home", TestMain.driver.getTitle());
     }

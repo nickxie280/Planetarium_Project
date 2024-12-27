@@ -20,7 +20,7 @@ public class HomepageSteps {
 
     @Then("they should see their planets and moons")
     public void they_should_see_their_planets_and_moons() {
-        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.titleIs("Home"));
         Assert.assertEquals("Home", TestMain.driver.getTitle());
         Assert.assertEquals("Welcome to the Home Page Batman", TestMain.homepage.getHomePageGreeting());
