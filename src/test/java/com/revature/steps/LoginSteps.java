@@ -12,12 +12,6 @@ import java.time.Duration;
 
 public class LoginSteps {
 
-    @Given("the user is on the login page to login")
-    public void the_user_is_on_the_login_page_to_login() {
-        TestMain.login.goToLoginPageToLogin();
-        Assert.assertEquals("Planetarium Login", TestMain.driver.getTitle());
-    }
-
     // Happy Path
     @When("the user provides a valid login username")
     public void the_user_provides_a_valid_login_username() {
@@ -50,13 +44,6 @@ public class LoginSteps {
     @When("the user provides an invalid login password {string}")
     public void the_user_provides_a_password(String string) {
         TestMain.login.insertPassword(string);
-    }
-
-    @Then("the user should get a login browser alert saying {string}")
-    public void the_user_should_get_a_login_browser_alert_saying(String string) {
-        String result = TestMain.login.alertHandler();
-        //System.out.println(result);
-        Assert.assertEquals(string, result);
     }
 
     @Then("the user should be redirected to the login page to login")

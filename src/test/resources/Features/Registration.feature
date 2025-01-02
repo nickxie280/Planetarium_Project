@@ -2,7 +2,7 @@ Feature: User Registration
   As a new user I want to open an account with the Planetarium so I can save my celestial findings
 
   Background: Registration Starting Actions
-    Given the user is on the login page to register
+    Given the user is on the login page
     And the user clicks the register link
 
   ## Happy Path
@@ -10,7 +10,7 @@ Feature: User Registration
     When the user provides a valid registration username
     And the user provides a valid registration password
     And the user submits the registration credentials
-    Then the user should get a registration browser alert saying "Account created successfully"
+    Then the user should get a browser alert saying "Account created successfully"
     And the user should be redirected to the login page after registration
 
   ## Sad Path
@@ -18,7 +18,7 @@ Feature: User Registration
     When the user provides an invalid registration username "<username>"
     When the user provides an invalid registration password "<password>"
     And the user submits the registration credentials
-    Then the user should get a registration browser alert saying "<alert>"
+    Then the user should get a browser alert saying "<alert>"
     And the user should be redirected to the register page
 
   Examples:

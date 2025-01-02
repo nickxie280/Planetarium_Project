@@ -9,12 +9,7 @@ import org.junit.Assert;
 
 public class RegistrationSteps {
 
-    @Given("the user is on the login page to register")
-    public void the_user_is_on_the_login_page_to_register() {
-        TestMain.registration.goToLoginPageToRegister();
-        Assert.assertEquals("Planetarium Login", TestMain.driver.getTitle());
-    }
-
+    // Background
     @And("the user clicks the register link")
     public void the_user_clicks_the_register_link() {
         TestMain.registration.clickRegisterLink();
@@ -35,12 +30,6 @@ public class RegistrationSteps {
     @When("the user submits the registration credentials")
     public void the_user_submits_the_registration_credentials() {
         TestMain.registration.accountCreation();
-    }
-
-    @Then("the user should get a registration browser alert saying {string}")
-    public void the_user_should_get_a_registration_browser_alert_saying(String string) {
-        String result = TestMain.registration.alertHandler();
-        Assert.assertEquals(string, result);
     }
 
     @Then("the user should be redirected to the login page after registration")

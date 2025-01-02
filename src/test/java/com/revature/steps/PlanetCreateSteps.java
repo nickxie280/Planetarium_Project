@@ -13,20 +13,13 @@ import java.time.Duration;
 
 public class PlanetCreateSteps {
 
-    @Given("that the user is logged in and is on the home page")
-    public void that_the_user_is_logged_in_and_is_on_the_home_page() {
-        TestMain.homepage.goToLoginPageForHomepage();
-        TestMain.homepage.knownGoodLogin();
-        WebDriverWait wait = new WebDriverWait(TestMain.driver, Duration.ofSeconds(3));
-        wait.until(ExpectedConditions.titleIs("Home"));
-        Assert.assertEquals("Home", TestMain.driver.getTitle());
-    }
-
+    //Background
     @And("the user creates a planet")
     public void the_user_creates_a_planet() {
         TestMain.planetCreate.selectPlanet();
     }
 
+    // Operates as both Happy and Sad Path. (Variable Input)
     @When("the user inputs a name {string}")
     public void the_user_inputs_a_valid_name(String string) {
         TestMain.planetCreate.insertPlanetName(string);
@@ -51,11 +44,7 @@ public class PlanetCreateSteps {
 
     @Then("the data reflected has been refreshed to include the newly added planet")
     public void the_data_reflected_has_been_refreshed_to_include_the_newly_added_planet() {
-        Assert.assertEquals(5, TestMain.planetCreate.getNumberOfCelestialRows(5));
+        Assert.assertEquals(5, TestMain.universal.getNumberOfCelestialRows(5));
     }
 
-    @Then("the user should get a browser alert saying {string}")
-    public void the_user_should_get_a_browser_alert_saying(String string) {
-        Assert.assertEquals(string, TestMain.planetCreate.alertHandler());
-    }
 }
